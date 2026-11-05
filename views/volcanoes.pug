@@ -11,8 +11,16 @@ block content
     ]
   div(class="container-fluid")
     div(class="row")
-      each volcano in results
-        div(class="col-sm-2")
+      each volcano, index in results
+        div(class="col-sm-2", onclick=`buy(${index})`)
+        div(class="container-fluid")
+        div(class="row")
+      each volcano, index in results
+        div(class="col-sm-2", onclick=`buy(${index})`)
           p Name: #{volcano.name}
           p Country: #{volcano.country}
           p Height: #{volcano.height_meters} m
+  script.
+   function buy(index) {
+      alert(`You purchased item ${index}`)
+    }
